@@ -71,7 +71,11 @@
   .timeline-item .when { font-size: 12px; color: var(--accent); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; padding-top: 2px; }
   .timeline-item .what { font-size: 14px; line-height: 1.55; }
   .timeline-item .what strong { font-weight: 500; }
+  .timeline-item .what ul { padding-left: 18px; margin-top: 6px; }
+  .timeline-item .what li { margin-bottom: 4px; }
   .footer-note { margin-top: 56px; padding: 18px 22px; background: rgba(0,0,0,0.025); border-radius: 8px; font-size: 12.5px; color: var(--ink-muted); line-height: 1.55; }
+  .footer-note ul { padding-left: 18px; margin-top: 8px; }
+  .footer-note li { margin-bottom: 5px; }
   @media (max-width: 760px) {
     .wrap { padding: 32px 18px 64px; }
     .country-grid, .country-grid.three { grid-template-columns: 1fr; }
@@ -313,31 +317,73 @@
   <div class="timeline">
     <div class="timeline-item">
       <div class="when">Month 1</div>
-      <div class="what"><strong>Excel mastery — go deep, not wide.</strong> Learn Pivot Tables, VLOOKUP/XLOOKUP, IF/IFS, SUMIF, basic charts, and named ranges. Download a real dataset from Kaggle (e.g. superstore sales) and build a dashboard from scratch. Goal: be comfortable with any spreadsheet task.</div>
+      <div class="what"><strong>Excel mastery — go deep, not wide.</strong>
+        <ul>
+          <li>Learn Pivot Tables, VLOOKUP/XLOOKUP, IF/IFS, SUMIF, and basic charts</li>
+          <li>Download a real sales dataset from Kaggle and build a dashboard from scratch</li>
+          <li>Goal: handle any spreadsheet task confidently without Googling</li>
+        </ul>
+      </div>
     </div>
     <div class="timeline-item">
       <div class="when">Month 2</div>
-      <div class="what"><strong>SQL from zero.</strong> Use SQLZoo.net and Mode's SQL Tutorial — both free. Learn SELECT, WHERE, GROUP BY, ORDER BY, JOIN (inner and left). Practice daily for 30 min. By end of month: write a query to answer a business question like "Which product category has the highest return rate?"</div>
+      <div class="what"><strong>SQL from zero.</strong>
+        <ul>
+          <li>Learn SELECT, WHERE, GROUP BY, ORDER BY, and JOIN — in that order</li>
+          <li>Practice 30 min daily on SQLZoo.net or Mode's free SQL Tutorial</li>
+          <li>End goal: answer "Which product category has the highest return rate?" in SQL</li>
+        </ul>
+      </div>
     </div>
     <div class="timeline-item">
       <div class="when">Month 3</div>
-      <div class="what"><strong>Power BI + first real project.</strong> Download Power BI Desktop (free). Connect it to a CSV dataset. Build a 3-page dashboard: overview, product breakdown, trends. Publish it to Power BI Service and add the link to your LinkedIn. This is your first portfolio piece.</div>
+      <div class="what"><strong>Power BI + first real project.</strong>
+        <ul>
+          <li>Download Power BI Desktop (free) and connect it to a CSV dataset</li>
+          <li>Build a 3-page dashboard: overview, product breakdown, and trends</li>
+          <li>Publish to Power BI Service, add the live link to your LinkedIn — portfolio piece #1</li>
+        </ul>
+      </div>
     </div>
     <div class="timeline-item">
       <div class="when">Month 4</div>
-      <div class="what"><strong>AI workflow + start applying.</strong> Integrate ChatGPT into your daily learning — use it for formula help, SQL practice, and mock interviews. Start applying for internships (not just full-time). Target companies in e-commerce and FMCG. Tailor each resume. Send 10 applications minimum per week.</div>
+      <div class="what"><strong>AI workflow + start applying.</strong>
+        <ul>
+          <li>Use ChatGPT daily for formula help, SQL practice, and mock interview prep</li>
+          <li>Start applying for internships — minimum 10 tailored applications per week</li>
+          <li>Target e-commerce and FMCG companies first; they hire the most freshers</li>
+        </ul>
+      </div>
     </div>
     <div class="timeline-item">
       <div class="when">Month 5</div>
-      <div class="what"><strong>Build a second project + SCM domain knowledge.</strong> Choose a SCM-themed dataset (inventory, logistics, or procurement). Build an Excel analysis or Power BI dashboard around it. Study SCM fundamentals: demand planning, OTIF, inventory metrics. Read 2–3 case studies from consulting firm websites (McKinsey, BCG have free ones).</div>
+      <div class="what"><strong>Build a second project + SCM domain knowledge.</strong>
+        <ul>
+          <li>Pick a SCM-themed dataset — inventory, logistics, or procurement data</li>
+          <li>Build an Excel analysis or Power BI dashboard around a real business question</li>
+          <li>Study demand planning, OTIF, and inventory metrics — read 2–3 free McKinsey/BCG cases</li>
+        </ul>
+      </div>
     </div>
     <div class="timeline-item">
       <div class="when">Month 6</div>
-      <div class="what"><strong>Interview prep + active applications.</strong> Practise answering the 10 most common data analyst and SCM analyst interview questions. Run mock interviews with ChatGPT. Apply aggressively — LinkedIn, Naukri, Unstop, company career pages. Don't wait until you feel "ready." Readiness comes from interviews, not more studying.</div>
+      <div class="what"><strong>Interview prep + active applications.</strong>
+        <ul>
+          <li>Practise top 10 data analyst and SCM interview questions out loud — not just reading</li>
+          <li>Apply daily on LinkedIn, Naukri, Unstop, and company career pages</li>
+          <li>Don't wait to feel ready — readiness comes from real interviews, not more studying</li>
+        </ul>
+      </div>
     </div>
     <div class="timeline-item">
       <div class="when">After Job</div>
-      <div class="what"><strong>Learn Python slowly, on the job.</strong> Once you're working, start Python in evenings. Focus on pandas for data cleaning — 20 min a day. Within 6–12 months you'll cross the next salary band. Add a certification (Power BI PL-300 or Google Data Analytics) when your company will sponsor it.</div>
+      <div class="what"><strong>Learn Python slowly, on the job.</strong>
+        <ul>
+          <li>Start Python in evenings — 20 min/day, pandas for data cleaning only</li>
+          <li>Cross the next salary band within 6–12 months with data + domain expertise</li>
+          <li>Add PL-300 or Google Data Analytics certification when your company sponsors it</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -371,12 +417,48 @@
   <div class="cost-card"><table>
     <thead><tr><th>What</th><th>How to do it right</th></tr></thead>
     <tbody>
-      <tr><td><strong>Resume (1 page)</strong></td><td>Lead with skills section: Excel (Advanced), SQL (Intermediate), Power BI. Then projects. Then education. Keep to 1 page. Use ChatGPT to rewrite bullets with action verbs + numbers: "Built a sales dashboard tracking ₹2Cr in revenue across 4 product lines."</td></tr>
-      <tr><td><strong>LinkedIn profile</strong></td><td>Headline: "Aspiring Data Analyst | Excel · SQL · Power BI | Open to Opportunities". Add your Power BI dashboard as a featured project. Post once a week about what you're learning. Recruiters actively search for candidates who do this.</td></tr>
-      <tr><td><strong>Where to apply</strong></td><td>LinkedIn Easy Apply, Naukri.com, Unstop (for campus), company career pages directly. For SCM: also check Logistics Insider and supply chain LinkedIn groups. Apply on Day 1 of posting — applications drop off fast.</td></tr>
-      <tr><td><strong>Interview prep</strong></td><td>Know these cold: SQL basics (write live), Excel shortcuts, how to walk through a dashboard you built, and 1–2 business problems you've solved. Practise explaining your projects out loud, not just on paper.</td></tr>
-      <tr><td><strong>Cold outreach</strong></td><td>Message SCM/data analysts at target companies on LinkedIn. "Hi [name], I'm a final-year BBA student building skills in data analysis. I'd love 15 minutes to learn about your work at [company] — would you be open to a quick call?" 1 in 5 will say yes.</td></tr>
-      <tr><td><strong>Internship first</strong></td><td>If full-time applications aren't converting, take a 3-month internship — even unpaid or low-paid. Real work experience changes your resume tier. Internshala, LinkedIn, and direct company career pages all list them.</td></tr>
+      <tr><td><strong>Resume (1 page)</strong></td><td>
+        <ul style="padding-left:16px; margin:0;">
+          <li>Lead with skills: Excel (Advanced), SQL (Intermediate), Power BI</li>
+          <li>Then projects, then education — keep to 1 page</li>
+          <li>Use ChatGPT to rewrite bullets: "Built a sales dashboard tracking ₹2Cr in revenue across 4 product lines"</li>
+        </ul>
+      </td></tr>
+      <tr><td><strong>LinkedIn profile</strong></td><td>
+        <ul style="padding-left:16px; margin:0;">
+          <li>Headline: "Aspiring Data Analyst | Excel · SQL · Power BI | Open to Opportunities"</li>
+          <li>Add your Power BI dashboard as a featured project</li>
+          <li>Post once a week about what you're learning — recruiters actively search for this</li>
+        </ul>
+      </td></tr>
+      <tr><td><strong>Where to apply</strong></td><td>
+        <ul style="padding-left:16px; margin:0;">
+          <li>LinkedIn Easy Apply, Naukri.com, Unstop (campus), company career pages</li>
+          <li>For SCM: also check Logistics Insider and supply chain LinkedIn groups</li>
+          <li>Apply on Day 1 of posting — response rates drop significantly after 48 hours</li>
+        </ul>
+      </td></tr>
+      <tr><td><strong>Interview prep</strong></td><td>
+        <ul style="padding-left:16px; margin:0;">
+          <li>Know SQL basics cold enough to write a query live</li>
+          <li>Walk through a dashboard you built — practice this out loud</li>
+          <li>Prepare 1–2 business problems you've solved with data</li>
+        </ul>
+      </td></tr>
+      <tr><td><strong>Cold outreach</strong></td><td>
+        <ul style="padding-left:16px; margin:0;">
+          <li>Message analysts at target companies on LinkedIn</li>
+          <li>"I'm a BBA student building data skills — can I get 15 minutes of your time?"</li>
+          <li>1 in 5 will say yes; those conversations are worth more than any course</li>
+        </ul>
+      </td></tr>
+      <tr><td><strong>Internship first</strong></td><td>
+        <ul style="padding-left:16px; margin:0;">
+          <li>If full-time isn't converting, take a 3-month internship — even low-paid</li>
+          <li>Real work experience moves you to a different resume tier entirely</li>
+          <li>Find them on Internshala, LinkedIn, and direct company career pages</li>
+        </ul>
+      </td></tr>
     </tbody>
   </table></div>
 </section>
@@ -384,7 +466,13 @@
 <section class="footer-note">
   <strong>About this guide:</strong> Written for non-technical BBA/commerce students in India looking to build a career in Data Analysis or Supply Chain Management in 2026. All tools mentioned have free versions available. Salary ranges are based on fresher market data in Indian metro cities and will vary by company size, location, and negotiation.
   <br><br>
-  <strong>One honest truth:</strong> This is a 4–6 month focused effort, not a 2-week sprint. The students who get hired are the ones who learn consistently, build real projects, and apply before they feel ready — not the ones who take the most courses. Start Excel this week. That's all.
+  <strong>One honest truth:</strong> This is a 4–6 month focused effort, not a 2-week sprint. The students who get hired are the ones who:
+  <ul>
+    <li>Learn consistently — even 1 hour a day compounds fast</li>
+    <li>Build real projects on public data — not just watch courses</li>
+    <li>Apply before they feel ready — the job market teaches faster than YouTube</li>
+  </ul>
+  Start Excel this week. That's all.
 </section>
 
 </div>
