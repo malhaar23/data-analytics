@@ -82,6 +82,13 @@
   .stat-box .stat-label { font-size: 12px; color: var(--ink-muted); margin-top: 5px; line-height: 1.4; }
   .hl { background: var(--accent-bg); color: var(--accent); padding: 1px 6px; border-radius: 3px; font-weight: 500; }
   .hl-green { background: var(--green-bg); color: var(--green); padding: 1px 6px; border-radius: 3px; font-weight: 500; }
+  .prog-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 20px 0; }
+  .prog-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px 18px; }
+  .prog-card .yr { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); font-weight: 500; margin-bottom: 6px; }
+  .prog-card .sal { font-size: 22px; font-weight: 600; color: var(--accent); margin-bottom: 4px; }
+  .prog-card .title { font-size: 13px; font-weight: 500; margin-bottom: 10px; color: var(--ink); }
+  .prog-card ul { padding-left: 16px; margin: 0; }
+  .prog-card li { font-size: 12.5px; color: var(--ink-muted); margin-bottom: 5px; line-height: 1.45; }
 
   /* ── Chatbot ── */
   #chat-toggle { position: fixed; bottom: 28px; right: 28px; width: 54px; height: 54px; background: var(--accent); color: #fff; border: none; border-radius: 50%; font-size: 24px; cursor: pointer; box-shadow: 0 4px 18px rgba(30,95,173,0.38); z-index: 1000; display: flex; align-items: center; justify-content: center; transition: transform 0.18s; }
@@ -109,7 +116,7 @@
 
   @media (max-width: 760px) {
     .wrap { padding: 32px 18px 64px; }
-    .country-grid, .country-grid.three { grid-template-columns: 1fr; }
+    .country-grid, .country-grid.three, .prog-grid { grid-template-columns: 1fr; }
     .pro-con { grid-template-columns: 1fr; }
     h1 { font-size: 26px; }
     .timeline-item { grid-template-columns: 1fr; gap: 2px; }
@@ -509,6 +516,81 @@
   </table></div>
 </section>
 
+<section>
+  <h2><span class="num">09</span>Your 3-year career progression</h2>
+  <p class="lead">Getting hired is the start, not the finish. Here's what the salary and title ladder looks like if you stay consistent — and exactly what skills unlock each level.</p>
+  <div class="prog-grid">
+    <div class="prog-card" style="border-top: 3px solid #1E5FAD;">
+      <div class="yr">Year 1 — Fresher</div>
+      <div class="sal">₹4–9 LPA</div>
+      <div class="title">Data Analyst / MIS Analyst / SCM Analyst</div>
+      <ul>
+        <li>Building reports and dashboards daily</li>
+        <li>Pulling SQL data, maintaining Excel MIS</li>
+        <li>Learning company domain and KPIs</li>
+        <li>Key skill to add: domain depth + stakeholder communication</li>
+      </ul>
+    </div>
+    <div class="prog-card" style="border-top: 3px solid #2E7D32;">
+      <div class="yr">Year 2 — Senior Analyst</div>
+      <div class="sal">₹9–15 LPA</div>
+      <div class="title">Senior Analyst / Planning Analyst / Category Analyst</div>
+      <ul>
+        <li>Own a module or process end-to-end</li>
+        <li>Present findings directly to managers</li>
+        <li>Start Python (pandas) for faster data work</li>
+        <li>Key skill to add: Python basics + basic statistics</li>
+      </ul>
+    </div>
+    <div class="prog-card" style="border-top: 3px solid #7B5EA7;">
+      <div class="yr">Year 3 — Lead / Manager</div>
+      <div class="sal">₹15–25 LPA</div>
+      <div class="title">Analytics Lead / SCM Manager / Ops Manager</div>
+      <ul>
+        <li>Manage a team or large business scope</li>
+        <li>Drive cross-functional projects end-to-end</li>
+        <li>SQL + Python fluently; strong business judgment</li>
+        <li>Key skill to add: people management + strategy</li>
+      </ul>
+    </div>
+    <div class="prog-card" style="border-top: 3px solid #E07B3D;">
+      <div class="yr">5 Years+ — Senior Leader</div>
+      <div class="sal">₹25–50L+</div>
+      <div class="title">Head of Analytics / VP SCM / Director of Operations</div>
+      <ul>
+        <li>Business judgment over tool knowledge</li>
+        <li>BBA foundation + data expertise = rare combination</li>
+        <li>Choice: stay as IC specialist or move to leadership</li>
+        <li>Key advantage: you understand both business and data</li>
+      </ul>
+    </div>
+  </div>
+  <p style="font-size:13px; color:var(--ink-soft); margin-top:8px;">Salary ranges are Indian metro averages across e-commerce, FMCG, and consulting. Startups can be higher; PSUs and traditional manufacturing lower. Progression speed depends heavily on company, manager, and how visibly you deliver results.</p>
+</section>
+
+<section>
+  <h2><span class="num">10</span>Your free learning kit — start today</h2>
+  <p class="lead">Everything in this guide's 6-month roadmap is free. No paid bootcamp, no premium subscription needed. These are the exact resources to use.</p>
+  <div class="cost-card"><table>
+    <thead><tr><th>Skill</th><th>Resource</th><th>What it covers</th><th>Time needed</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Excel</strong></td><td>ExcelJet.net</td><td>Every function, formula, and keyboard shortcut explained with examples</td><td>Self-paced</td></tr>
+      <tr><td><strong>Excel</strong></td><td>Chandoo.org</td><td>Dashboards, Pivot Tables, advanced charts — business-focused</td><td>Self-paced</td></tr>
+      <tr><td><strong>SQL</strong></td><td>SQLZoo.net</td><td>Interactive SQL exercises from absolute zero — browser-based, no install</td><td>4–6 weeks</td></tr>
+      <tr><td><strong>SQL</strong></td><td>Mode SQL Tutorial</td><td>Business SQL problems — closer to real analyst work</td><td>2–3 weeks</td></tr>
+      <tr><td><strong>Power BI</strong></td><td>Microsoft Learn</td><td>Official Power BI learning path — structured and free</td><td>3–4 weeks</td></tr>
+      <tr><td><strong>Power BI</strong></td><td>Guy in a Cube (YouTube)</td><td>Practical dashboard building — best YouTube channel for Power BI</td><td>Self-paced</td></tr>
+      <tr><td><strong>Python</strong></td><td>Kaggle Learn — Python</td><td>Python + pandas for data analysis, completely free in browser</td><td>3–4 weeks</td></tr>
+      <tr><td><strong>Practice data</strong></td><td>Kaggle.com datasets</td><td>Free real-world datasets — search "superstore", "supply chain", "ecommerce"</td><td>Ongoing</td></tr>
+      <tr><td><strong>SCM concepts</strong></td><td>APICS.org (free articles)</td><td>Supply chain terminology, frameworks, and industry benchmarks</td><td>Self-paced</td></tr>
+      <tr><td><strong>Case studies</strong></td><td>McKinsey.com / BCG.com</td><td>Free supply chain and operations case studies from top consulting firms</td><td>Self-paced</td></tr>
+      <tr><td><strong>Certification</strong></td><td>Google Data Analytics (Coursera)</td><td>Full analyst program — apply for financial aid to get it free</td><td>~6 months</td></tr>
+      <tr><td><strong>AI assistant</strong></td><td>ChatGPT (GPT-4o free tier)</td><td>SQL help, formula generation, interview prep, resume rewrites</td><td>Daily use</td></tr>
+      <tr class="total"><td colspan="3">Total cost to become job-ready</td><td><span class="hl-green">₹0</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
 <section class="footer-note">
   <strong>About this guide:</strong> Written for non-technical BBA/commerce students in India looking to build a career in Data Analysis or Supply Chain Management in 2026. All tools mentioned have free versions available. Salary ranges are based on fresher market data in Indian metro cities and will vary by company size, location, and negotiation.
   <br><br>
@@ -559,8 +641,8 @@
       reply: 'SQL is the language to pull data from company databases. Learn SELECT, WHERE, GROUP BY, ORDER BY, and JOIN in that order — that covers 80% of what you\'ll use daily. Start at SQLZoo.net or Mode\'s SQL Tutorial (both free). Practice on SQLiteOnline.com. Takes 4–6 weeks.' },
     { keys: ['power bi','tableau','dashboard','bi tool'],
       reply: 'Power BI is the go-to dashboard tool for Indian companies — download Power BI Desktop for free, connect a CSV dataset, and build a 3-page dashboard (overview, product breakdown, trends). Publish it to Power BI Service and add the link to your LinkedIn. That\'s your first portfolio piece.' },
-    { keys: ['salary','pay','lpa','ctc','package'],
-      reply: 'Fresher data analyst roles: ₹4–8 LPA. SCM analyst roles: ₹4–9 LPA. The overlap zone (data + SCM combined) earns 30–50% more than pure SCM. Senior roles (3–5 years) reach ₹15–25 LPA. These are Indian metro averages — varies by company size and city.' },
+    { keys: ['salary','pay','lpa','ctc','package','earn','progression','career growth'],
+      reply: 'Year 1 (fresher): ₹4–9 LPA. Year 2 (senior analyst): ₹9–15 LPA. Year 3 (lead/manager): ₹15–25 LPA. 5 years+: ₹25–50 LPA at large companies. The SCM + data combo earns 30–50% more than pure SCM. Your BBA + data skills is a rare combination at the senior level.' },
     { keys: ['python','coding','programming','code'],
       reply: 'You don\'t need Python to get your first job. Companies hire freshers for Excel + SQL + Power BI — Python is the upgrade. Learn it after landing a role. When you do start, focus only on pandas for data cleaning (Kaggle Learn has a free course). Skip machine learning for now.' },
     { keys: ['internship','intern'],
@@ -569,7 +651,7 @@
       reply: 'Set your headline to: "Aspiring Data Analyst | Excel · SQL · Power BI | Open to Opportunities." Add your Power BI dashboard as a featured project. Post once a week about what you\'re learning — even 3 sentences. Recruiters actively search for students who do this. Most candidates skip it — that\'s your edge.' },
     { keys: ['resume','cv','application'],
       reply: 'Keep it 1 page. Order: Skills → Projects → Education. Use ChatGPT to rewrite your bullets with action verbs and numbers: "Built a sales dashboard tracking ₹2Cr in revenue across 4 product lines." Then verify every number is real before submitting. Lead with skills — not education.' },
-    { keys: ['scm','supply chain','logistics','procurement','inventory','demand plan','vendor'],
+    { keys: ['scm','supply chain','logistics','procurement','inventory','demand plan','vendor','otif'],
       reply: 'SCM (Supply Chain Management) is about how products move from factory to customer — demand planning, vendor management, inventory, and logistics cost control. Key metrics to know: OTIF (On Time In Full), inventory turnover, lead time, safety stock. It\'s more data-heavy than most people expect.' },
     { keys: ['chatgpt','ai','copilot','artificial intelligence','gpt'],
       reply: 'Use AI to go 3x faster — but learn the skill yourself first. Key uses: write SQL queries in plain English, get Excel formula help, prep for interviews, rewrite resume bullets. The golden rule: never paste confidential company data into ChatGPT. The best prompt is specific — "write SQL to find top 5 SKUs by returns" beats "help me with SQL".' },
@@ -581,8 +663,8 @@
       reply: 'Your BBA is an advantage, not a disadvantage. You understand P&L, business strategy, marketing, and finance — things most CS/engineering candidates genuinely don\'t. Frame yourself as a "business person who uses data" in interviews. That positioning beats the average tech graduate who can run SQL but can\'t explain what the numbers mean to a manager.' },
     { keys: ['company','companies','flipkart','amazon','hul','itc','meesho','delhivery'],
       reply: 'Top companies hiring freshers in data + SCM: E-commerce (Flipkart, Amazon, Meesho, Nykaa), FMCG (HUL, ITC, DMart, Reliance Retail), Logistics (Delhivery, Blue Dart, Ecom Express), Manufacturing (Tata, Mahindra, JSW), and Consulting (Big 4 firms, Kearney). E-commerce and FMCG are the highest-volume fresher hirers.' },
-    { keys: ['kaggle','dataset','project','portfolio'],
-      reply: 'Kaggle is your best free source for practice datasets. Search "superstore sales", "supply chain dataset", or "e-commerce data". Build a dashboard from the data, answer a real business question with it, and publish it — either on Power BI Service or as a PDF. 2–3 solid projects completely transform your resume.' },
+    { keys: ['kaggle','dataset','project','portfolio','free resource','resource'],
+      reply: 'Your complete free learning kit: Excel → ExcelJet.net, SQL → SQLZoo.net, Power BI → Microsoft Learn + Guy in a Cube on YouTube, Python → Kaggle Learn, Datasets → Kaggle.com, Case studies → McKinsey.com / BCG.com (free articles). Total cost to become job-ready: ₹0.' },
     { keys: ['interview','prep','question'],
       reply: 'Prepare these cold before any interview: write a basic SQL query live on demand, walk through a dashboard you built (explain the business question, your approach, and findings), and describe 1–2 analysis problems you\'ve solved. Practice answering out loud — not just reading notes. Use ChatGPT to run mock interviews.' },
     { keys: ['certif','certificate','course','coursera','google'],
@@ -598,7 +680,7 @@
     for (const r of RESPONSES) {
       if (r.keys.some(k => lower.includes(k))) return r.reply;
     }
-    return 'Great question! This guide covers data analysis, SCM careers, tools (Excel, SQL, Power BI), AI usage, the 6-month roadmap, and landing your first role. Try asking about: skills, salary, SQL, internship, LinkedIn, resume, companies, or Python.';
+    return 'Great question! This guide covers data analysis, SCM careers, tools (Excel, SQL, Power BI), AI usage, the 6-month roadmap, 3-year career progression, free resources, and landing your first role. Try asking about: skills, salary, SQL, internship, LinkedIn, resume, companies, or Python.';
   }
 
   function addMsg(text, who) {
@@ -619,10 +701,7 @@
     addMsg(text, 'user');
     document.getElementById('chat-chips').style.display = 'none';
     const typing = addMsg('Typing…', 'typing');
-    setTimeout(() => {
-      typing.remove();
-      addMsg(getBotReply(text), 'bot');
-    }, 600);
+    setTimeout(() => { typing.remove(); addMsg(getBotReply(text), 'bot'); }, 600);
   }
 
   function askChip(btn) {
@@ -630,10 +709,7 @@
     document.getElementById('chat-chips').style.display = 'none';
     addMsg(text, 'user');
     const typing = addMsg('Typing…', 'typing');
-    setTimeout(() => {
-      typing.remove();
-      addMsg(getBotReply(text), 'bot');
-    }, 600);
+    setTimeout(() => { typing.remove(); addMsg(getBotReply(text), 'bot'); }, 600);
   }
 
   function toggleChat() {
@@ -641,7 +717,7 @@
     const isOpen = w.classList.toggle('open');
     document.getElementById('chat-toggle').textContent = isOpen ? '✕' : '💬';
     if (isOpen && document.getElementById('chat-msgs').children.length === 0) {
-      setTimeout(() => addMsg('Hi! I\'m the Data & SCM Guide Bot. Ask me anything about data analysis or SCM careers — skills, salary, tools, jobs, AI, or the 6-month roadmap. Or tap one of the quick questions below.', 'bot'), 200);
+      setTimeout(() => addMsg('Hi! I\'m the Data & SCM Guide Bot. Ask me anything about data analysis or SCM careers — skills, salary, tools, jobs, AI, career progression, or free resources. Or tap a quick question below.', 'bot'), 200);
     }
   }
 </script>
