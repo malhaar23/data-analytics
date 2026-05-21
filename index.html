@@ -82,6 +82,31 @@
   .stat-box .stat-label { font-size: 12px; color: var(--ink-muted); margin-top: 5px; line-height: 1.4; }
   .hl { background: var(--accent-bg); color: var(--accent); padding: 1px 6px; border-radius: 3px; font-weight: 500; }
   .hl-green { background: var(--green-bg); color: var(--green); padding: 1px 6px; border-radius: 3px; font-weight: 500; }
+
+  /* ── Chatbot ── */
+  #chat-toggle { position: fixed; bottom: 28px; right: 28px; width: 54px; height: 54px; background: var(--accent); color: #fff; border: none; border-radius: 50%; font-size: 24px; cursor: pointer; box-shadow: 0 4px 18px rgba(30,95,173,0.38); z-index: 1000; display: flex; align-items: center; justify-content: center; transition: transform 0.18s; }
+  #chat-toggle:hover { transform: scale(1.08); }
+  #chat-widget { position: fixed; bottom: 94px; right: 28px; width: 340px; background: var(--card); border: 1px solid var(--border-strong); border-radius: 14px; box-shadow: 0 8px 36px rgba(0,0,0,0.15); z-index: 1000; display: none; flex-direction: column; overflow: hidden; font-size: 14px; }
+  #chat-widget.open { display: flex; }
+  #chat-head { background: var(--accent); color: #fff; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; }
+  #chat-head .chat-title { font-weight: 500; font-size: 14px; }
+  #chat-head .chat-subtitle { font-size: 11px; opacity: 0.75; margin-top: 1px; }
+  #chat-close { background: none; border: none; color: #fff; font-size: 18px; cursor: pointer; opacity: 0.8; line-height: 1; padding: 0; }
+  #chat-close:hover { opacity: 1; }
+  #chat-msgs { padding: 14px; height: 270px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth; }
+  .cmsg { max-width: 88%; padding: 9px 13px; border-radius: 10px; font-size: 13px; line-height: 1.55; }
+  .cmsg.bot { background: var(--accent-bg); color: var(--ink); align-self: flex-start; border-bottom-left-radius: 3px; }
+  .cmsg.user { background: var(--accent); color: #fff; align-self: flex-end; border-bottom-right-radius: 3px; }
+  .cmsg.typing { background: var(--accent-bg); color: var(--ink-soft); align-self: flex-start; font-style: italic; font-size: 13px; }
+  #chat-chips { padding: 4px 12px 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { background: none; border: 1px solid var(--border-strong); border-radius: 20px; padding: 5px 11px; font-size: 11.5px; cursor: pointer; color: var(--accent); font-family: inherit; transition: background 0.15s; }
+  .chip:hover { background: var(--accent-bg); }
+  #chat-input-row { padding: 10px 12px; border-top: 1px solid var(--border); display: flex; gap: 8px; align-items: center; }
+  #chat-input { flex: 1; border: 1px solid var(--border-strong); border-radius: 20px; padding: 8px 14px; font-size: 13px; outline: none; font-family: inherit; background: var(--bg); }
+  #chat-input:focus { border-color: var(--accent); }
+  #chat-send { background: var(--accent); color: #fff; border: none; border-radius: 50%; width: 34px; height: 34px; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  #chat-send:hover { background: #174e96; }
+
   @media (max-width: 760px) {
     .wrap { padding: 32px 18px 64px; }
     .country-grid, .country-grid.three { grid-template-columns: 1fr; }
@@ -89,6 +114,7 @@
     h1 { font-size: 26px; }
     .timeline-item { grid-template-columns: 1fr; gap: 2px; }
     .stat-strip { grid-template-columns: 1fr; }
+    #chat-widget { width: calc(100vw - 32px); right: 16px; }
   }
 </style>
 </head>
@@ -261,7 +287,6 @@
 <section>
   <h2><span class="num">04</span>How to actually use AI — the right way</h2>
   <p class="lead">AI doesn't replace you — it makes you <span class="hl">3x faster</span>. But only if you know enough to guide it and verify what it gives you back.</p>
-
   <div class="cost-card"><table>
     <thead><tr><th>Task</th><th>How to use AI for it</th><th>What to watch out for</th></tr></thead>
     <tbody>
@@ -274,7 +299,6 @@
       <tr><td><strong>Writing your resume</strong></td><td>Paste your raw project description. "Rewrite this as a 2-line resume bullet using strong action verbs and quantified outcomes." Then edit to match your real numbers.</td><td>AI inflates language. Verify every number and claim is something you can defend in an interview.</td></tr>
     </tbody>
   </table></div>
-
   <div class="tldr">
     <h3>The rule for using AI at work</h3>
     <ul>
@@ -498,5 +522,128 @@
 </section>
 
 </div>
+
+<!-- ── Data & SCM Guide Bot ── -->
+<button id="chat-toggle" onclick="toggleChat()" title="Ask a career question">💬</button>
+
+<div id="chat-widget">
+  <div id="chat-head">
+    <div>
+      <div class="chat-title">Data &amp; SCM Guide Bot</div>
+      <div class="chat-subtitle">Ask anything about this career guide</div>
+    </div>
+    <button id="chat-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div id="chat-msgs"></div>
+  <div id="chat-chips">
+    <button class="chip" onclick="askChip(this)">What skills do I need?</button>
+    <button class="chip" onclick="askChip(this)">What salary to expect?</button>
+    <button class="chip" onclick="askChip(this)">How to learn SQL?</button>
+    <button class="chip" onclick="askChip(this)">Where to find jobs?</button>
+    <button class="chip" onclick="askChip(this)">Do I need Python?</button>
+    <button class="chip" onclick="askChip(this)">How to use AI at work?</button>
+  </div>
+  <div id="chat-input-row">
+    <input id="chat-input" type="text" placeholder="Ask a career question…" onkeydown="if(event.key==='Enter')sendMsg()">
+    <button id="chat-send" onclick="sendMsg()">➔</button>
+  </div>
+</div>
+
+<script>
+  const RESPONSES = [
+    { keys: ['skill','must have','non-negotiable','learn first'],
+      reply: 'The 4 non-negotiables: Excel (intermediate), SQL (basic–intermediate), Power BI or Tableau (basic), and strong communication. That combination gets you shortlisted for 90% of data analyst and SCM analyst roles in India. Everything else — Python, ML — comes after you have a job.' },
+    { keys: ['excel'],
+      reply: 'Excel is the most important tool to learn first — before SQL, before Python, before anything. Master Pivot Tables, VLOOKUP/XLOOKUP, IF/IFS, SUMIF, and basic charts. Use ExcelJet.net (free) and practice on real Kaggle datasets. Takes 3–4 weeks to get genuinely comfortable.' },
+    { keys: ['sql','query','database'],
+      reply: 'SQL is the language to pull data from company databases. Learn SELECT, WHERE, GROUP BY, ORDER BY, and JOIN in that order — that covers 80% of what you\'ll use daily. Start at SQLZoo.net or Mode\'s SQL Tutorial (both free). Practice on SQLiteOnline.com. Takes 4–6 weeks.' },
+    { keys: ['power bi','tableau','dashboard','bi tool'],
+      reply: 'Power BI is the go-to dashboard tool for Indian companies — download Power BI Desktop for free, connect a CSV dataset, and build a 3-page dashboard (overview, product breakdown, trends). Publish it to Power BI Service and add the link to your LinkedIn. That\'s your first portfolio piece.' },
+    { keys: ['salary','pay','lpa','ctc','package'],
+      reply: 'Fresher data analyst roles: ₹4–8 LPA. SCM analyst roles: ₹4–9 LPA. The overlap zone (data + SCM combined) earns 30–50% more than pure SCM. Senior roles (3–5 years) reach ₹15–25 LPA. These are Indian metro averages — varies by company size and city.' },
+    { keys: ['python','coding','programming','code'],
+      reply: 'You don\'t need Python to get your first job. Companies hire freshers for Excel + SQL + Power BI — Python is the upgrade. Learn it after landing a role. When you do start, focus only on pandas for data cleaning (Kaggle Learn has a free course). Skip machine learning for now.' },
+    { keys: ['internship','intern'],
+      reply: 'Apply on Internshala, LinkedIn, and company career pages directly. If full-time isn\'t converting after 2–3 months of applying, take any 3-month internship — even low-paid or unpaid. Real work experience completely changes your resume tier. Most full-time offers at good companies come from intern conversions.' },
+    { keys: ['linkedin','profile','personal brand'],
+      reply: 'Set your headline to: "Aspiring Data Analyst | Excel · SQL · Power BI | Open to Opportunities." Add your Power BI dashboard as a featured project. Post once a week about what you\'re learning — even 3 sentences. Recruiters actively search for students who do this. Most candidates skip it — that\'s your edge.' },
+    { keys: ['resume','cv','application'],
+      reply: 'Keep it 1 page. Order: Skills → Projects → Education. Use ChatGPT to rewrite your bullets with action verbs and numbers: "Built a sales dashboard tracking ₹2Cr in revenue across 4 product lines." Then verify every number is real before submitting. Lead with skills — not education.' },
+    { keys: ['scm','supply chain','logistics','procurement','inventory','demand plan','vendor'],
+      reply: 'SCM (Supply Chain Management) is about how products move from factory to customer — demand planning, vendor management, inventory, and logistics cost control. Key metrics to know: OTIF (On Time In Full), inventory turnover, lead time, safety stock. It\'s more data-heavy than most people expect.' },
+    { keys: ['chatgpt','ai','copilot','artificial intelligence','gpt'],
+      reply: 'Use AI to go 3x faster — but learn the skill yourself first. Key uses: write SQL queries in plain English, get Excel formula help, prep for interviews, rewrite resume bullets. The golden rule: never paste confidential company data into ChatGPT. The best prompt is specific — "write SQL to find top 5 SKUs by returns" beats "help me with SQL".' },
+    { keys: ['job','apply','where to','naukri','unstop','find'],
+      reply: 'Apply on: LinkedIn Easy Apply, Naukri.com, Unstop (for campus roles), and company career pages directly. For SCM specifically: check Logistics Insider and supply chain LinkedIn groups. Apply on Day 1 of a posting — response rates drop sharply after 48 hours. Minimum 10 applications per week.' },
+    { keys: ['how long','time','months','timeline','roadmap'],
+      reply: 'With 1–2 hours of focused daily practice: Month 1 = Excel, Month 2 = SQL, Month 3 = Power BI + first portfolio project, Month 4 = AI tools + start applying. You should be interview-ready in 4–6 months. Don\'t wait until you feel perfectly ready — apply at month 4 regardless.' },
+    { keys: ['bba','commerce','non-tech','background','degree'],
+      reply: 'Your BBA is an advantage, not a disadvantage. You understand P&L, business strategy, marketing, and finance — things most CS/engineering candidates genuinely don\'t. Frame yourself as a "business person who uses data" in interviews. That positioning beats the average tech graduate who can run SQL but can\'t explain what the numbers mean to a manager.' },
+    { keys: ['company','companies','flipkart','amazon','hul','itc','meesho','delhivery'],
+      reply: 'Top companies hiring freshers in data + SCM: E-commerce (Flipkart, Amazon, Meesho, Nykaa), FMCG (HUL, ITC, DMart, Reliance Retail), Logistics (Delhivery, Blue Dart, Ecom Express), Manufacturing (Tata, Mahindra, JSW), and Consulting (Big 4 firms, Kearney). E-commerce and FMCG are the highest-volume fresher hirers.' },
+    { keys: ['kaggle','dataset','project','portfolio'],
+      reply: 'Kaggle is your best free source for practice datasets. Search "superstore sales", "supply chain dataset", or "e-commerce data". Build a dashboard from the data, answer a real business question with it, and publish it — either on Power BI Service or as a PDF. 2–3 solid projects completely transform your resume.' },
+    { keys: ['interview','prep','question'],
+      reply: 'Prepare these cold before any interview: write a basic SQL query live on demand, walk through a dashboard you built (explain the business question, your approach, and findings), and describe 1–2 analysis problems you\'ve solved. Practice answering out loud — not just reading notes. Use ChatGPT to run mock interviews.' },
+    { keys: ['certif','certificate','course','coursera','google'],
+      reply: 'Most valuable certifications for India: Google Data Analytics on Coursera (free with financial aid — worth doing), Microsoft PL-300 for Power BI (valued at Indian companies), and APICS CSCP for SCM (expensive but respected). But projects matter more than certs to most hirers — build something real before cert-collecting.' },
+    { keys: ['myth','wrong','misconception'],
+      reply: 'Biggest myths: you need a CS degree (you don\'t), Python must come first (Excel first), paid bootcamps are necessary (everything is free on Kaggle and YouTube), and AI will replace your job (it replaces repetitive data pulling, not business judgment — which is your BBA strength).' },
+    { keys: ['cold','outreach','message','network','connect'],
+      reply: 'Message SCM or data analysts at target companies on LinkedIn. Keep it short: "Hi [name], I\'m a BBA student building skills in data analysis. I\'d love 15 minutes to hear about your work at [company]. Would you be open to a quick call?" About 1 in 5 will say yes. Those conversations teach more than most courses.' },
+  ];
+
+  function getBotReply(msg) {
+    const lower = msg.toLowerCase();
+    for (const r of RESPONSES) {
+      if (r.keys.some(k => lower.includes(k))) return r.reply;
+    }
+    return 'Great question! This guide covers data analysis, SCM careers, tools (Excel, SQL, Power BI), AI usage, the 6-month roadmap, and landing your first role. Try asking about: skills, salary, SQL, internship, LinkedIn, resume, companies, or Python.';
+  }
+
+  function addMsg(text, who) {
+    const msgs = document.getElementById('chat-msgs');
+    const div = document.createElement('div');
+    div.className = 'cmsg ' + who;
+    div.textContent = text;
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+    return div;
+  }
+
+  function sendMsg() {
+    const input = document.getElementById('chat-input');
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    addMsg(text, 'user');
+    document.getElementById('chat-chips').style.display = 'none';
+    const typing = addMsg('Typing…', 'typing');
+    setTimeout(() => {
+      typing.remove();
+      addMsg(getBotReply(text), 'bot');
+    }, 600);
+  }
+
+  function askChip(btn) {
+    const text = btn.textContent;
+    document.getElementById('chat-chips').style.display = 'none';
+    addMsg(text, 'user');
+    const typing = addMsg('Typing…', 'typing');
+    setTimeout(() => {
+      typing.remove();
+      addMsg(getBotReply(text), 'bot');
+    }, 600);
+  }
+
+  function toggleChat() {
+    const w = document.getElementById('chat-widget');
+    const isOpen = w.classList.toggle('open');
+    document.getElementById('chat-toggle').textContent = isOpen ? '✕' : '💬';
+    if (isOpen && document.getElementById('chat-msgs').children.length === 0) {
+      setTimeout(() => addMsg('Hi! I\'m the Data & SCM Guide Bot. Ask me anything about data analysis or SCM careers — skills, salary, tools, jobs, AI, or the 6-month roadmap. Or tap one of the quick questions below.', 'bot'), 200);
+    }
+  }
+</script>
 </body>
 </html>
