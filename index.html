@@ -76,12 +76,19 @@
   .footer-note { margin-top: 56px; padding: 18px 22px; background: rgba(0,0,0,0.025); border-radius: 8px; font-size: 12.5px; color: var(--ink-muted); line-height: 1.55; }
   .footer-note ul { padding-left: 18px; margin-top: 8px; }
   .footer-note li { margin-bottom: 5px; }
+  .stat-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0 0 28px; }
+  .stat-box { background: var(--accent-bg); border: 1px solid rgba(30,95,173,0.18); border-radius: 8px; padding: 18px 20px; text-align: center; }
+  .stat-box .stat-num { font-size: 30px; font-weight: 600; color: var(--accent); line-height: 1.1; }
+  .stat-box .stat-label { font-size: 12px; color: var(--ink-muted); margin-top: 5px; line-height: 1.4; }
+  .hl { background: var(--accent-bg); color: var(--accent); padding: 1px 6px; border-radius: 3px; font-weight: 500; }
+  .hl-green { background: var(--green-bg); color: var(--green); padding: 1px 6px; border-radius: 3px; font-weight: 500; }
   @media (max-width: 760px) {
     .wrap { padding: 32px 18px 64px; }
     .country-grid, .country-grid.three { grid-template-columns: 1fr; }
     .pro-con { grid-template-columns: 1fr; }
     h1 { font-size: 26px; }
     .timeline-item { grid-template-columns: 1fr; gap: 2px; }
+    .stat-strip { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -94,20 +101,35 @@
   <p class="sub">A no-fluff guide to breaking into Data Analysis or Supply Chain Management from a non-technical background — what skills actually matter, what tools to learn, how AI changes the game, and how to land your first role.</p>
   <div class="meta">
     <span><strong>For:</strong> Non-tech BBA / commerce students</span>
-    <span><strong>Time to job-ready:</strong> 4–6 months focused effort</span>
-    <span><strong>Starting salary:</strong> ₹4–9 LPA (fresher)</span>
+    <span><strong>Time to job-ready:</strong> <span class="hl">4–6 months</span> focused effort</span>
+    <span><strong>Starting salary:</strong> <span class="hl">₹4–9 LPA</span> (fresher)</span>
   </div>
 </header>
 
 <section>
+  <div class="stat-strip">
+    <div class="stat-box">
+      <div class="stat-num">90%</div>
+      <div class="stat-label">of entry-level jobs need zero coding — just Excel, SQL, and dashboards</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">4–6 mo</div>
+      <div class="stat-label">from zero to job-ready with focused, consistent daily practice</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">₹4–9L</div>
+      <div class="stat-label">fresher salary range across data and SCM roles in Indian metros</div>
+    </div>
+  </div>
+
   <div class="tldr">
     <h3>The 60-second answer</h3>
     <ul>
-      <li><strong>You don't need coding.</strong> 90% of Data Analysis and SCM jobs at the entry level run on Excel, SQL, and dashboarding tools — not Python or engineering degrees.</li>
-      <li><strong>Excel + SQL is your foundation.</strong> Master these two before touching anything else. Every single analyst role on every job board lists them.</li>
+      <li><strong>You don't need coding.</strong> <span class="hl">90%</span> of Data Analysis and SCM jobs at the entry level run on Excel, SQL, and dashboarding tools — not Python or engineering degrees.</li>
+      <li><strong>Excel + SQL is your foundation.</strong> Master <span class="hl">Excel + SQL</span> before touching anything else. Every single analyst role on every job board lists them.</li>
       <li><strong>AI is your multiplier, not a shortcut.</strong> ChatGPT and Copilot can write SQL, explain data, and draft reports — but only if you understand enough to verify the output.</li>
       <li><strong>SCM is more analyst-heavy than people think.</strong> Demand planning, inventory analysis, and vendor data — it's all spreadsheets and dashboards.</li>
-      <li><strong>Portfolio beats degree.</strong> 3 real-looking projects on GitHub and a clean LinkedIn beats a certificate from a premium course with nothing to show.</li>
+      <li><strong>Portfolio beats degree.</strong> <span class="hl-green">3 real projects + clean LinkedIn</span> beats a premium certificate with nothing to show.</li>
     </ul>
   </div>
 </section>
@@ -124,7 +146,7 @@
       <div class="stat-row"><span class="k">Day-to-day</span><span class="v">Dashboards, reports, SQL queries, Excel</span></div>
       <div class="stat-row"><span class="k">Titles</span><span class="v">Business Analyst, Data Analyst, MIS Analyst</span></div>
       <div class="stat-row"><span class="k">Best for</span><span class="v">Detail-oriented, like storytelling with numbers</span></div>
-      <div class="stat-row"><span class="k">Fresher salary</span><span class="v">₹4–8 LPA</span></div>
+      <div class="stat-row"><span class="k">Fresher salary</span><span class="v"><span class="hl">₹4–8 LPA</span></span></div>
     </div>
     <div class="country-card" style="border-top: 3px solid #2E7D32;">
       <div class="flag">Path B</div>
@@ -134,7 +156,7 @@
       <div class="stat-row"><span class="k">Day-to-day</span><span class="v">Demand planning, vendor MIS, logistics tracking</span></div>
       <div class="stat-row"><span class="k">Titles</span><span class="v">SCM Analyst, Demand Planner, Procurement Analyst</span></div>
       <div class="stat-row"><span class="k">Best for</span><span class="v">Process-minded, interested in operations</span></div>
-      <div class="stat-row"><span class="k">Fresher salary</span><span class="v">₹4–9 LPA</span></div>
+      <div class="stat-row"><span class="k">Fresher salary</span><span class="v"><span class="hl">₹4–9 LPA</span></span></div>
     </div>
     <div class="country-card" style="border-top: 3px solid #7B5EA7;">
       <div class="flag">Overlap Zone</div>
@@ -143,7 +165,7 @@
       <div class="stat-row"><span class="k">Why it works</span><span class="v">SCM people rarely know data; data people rarely know ops</span></div>
       <div class="stat-row"><span class="k">Where to find it</span><span class="v">E-commerce, FMCG, manufacturing, 3PL companies</span></div>
       <div class="stat-row"><span class="k">Titles</span><span class="v">SCM Analyst, Operations Analyst, Planning Analyst</span></div>
-      <div class="stat-row"><span class="k">Salary bump</span><span class="v">+30–50% vs pure SCM roles</span></div>
+      <div class="stat-row"><span class="k">Salary bump</span><span class="v"><span class="hl">+30–50%</span> vs pure SCM roles</span></div>
       <div class="stat-row"><span class="k">Verdict</span><span class="v">Target this if you can learn both</span></div>
     </div>
     <div class="country-card" style="border-top: 3px solid #E07B3D;">
@@ -152,7 +174,7 @@
       <div class="tag">Most job descriptions look scary. The actual day-to-day is far more manageable than the listing suggests.</div>
       <div class="stat-row"><span class="k">Listed</span><span class="v">Python, Machine Learning, Power BI, SQL...</span></div>
       <div class="stat-row"><span class="k">Actually used daily</span><span class="v">Excel, email, 1 dashboard tool</span></div>
-      <div class="stat-row"><span class="k">What gets you hired</span><span class="v">Excel + SQL + 1 dashboard + communication</span></div>
+      <div class="stat-row"><span class="k">What gets you hired</span><span class="v"><span class="hl">Excel + SQL + 1 dashboard</span> + communication</span></div>
       <div class="stat-row"><span class="k">What keeps you growing</span><span class="v">Python and AI tools over time</span></div>
     </div>
   </div>
@@ -160,17 +182,17 @@
 
 <section>
   <h2><span class="num">02</span>Non-negotiable skills — the must-haves</h2>
-  <p class="lead">These are not "nice to have." If you don't have these, your resume gets filtered before a human reads it. Learn these first, everything else is secondary.</p>
+  <p class="lead">These are not "nice to have." If you don't have these, <span class="hl">your resume gets filtered before a human reads it</span>. Learn these first, everything else is secondary.</p>
   <div class="cost-card"><table>
     <thead><tr><th>Skill</th><th>Why it's non-negotiable</th><th>Time to learn basics</th><th>Level needed (fresher)</th></tr></thead>
     <tbody>
       <tr><td><strong>Excel / Google Sheets</strong></td><td>Every single analyst job. VLOOKUP, Pivot Tables, INDEX-MATCH, conditional formatting. The baseline.</td><td>3–4 weeks</td><td>Intermediate</td></tr>
-      <tr><td><strong>SQL</strong></td><td>The language to pull data from databases. 80% of "data analyst" job listings require it. SELECT, WHERE, GROUP BY, JOIN is enough to start.</td><td>4–6 weeks</td><td>Basic–Intermediate</td></tr>
+      <tr><td><strong>SQL</strong></td><td>The language to pull data from databases. <span class="hl">80%</span> of "data analyst" job listings require it. SELECT, WHERE, GROUP BY, JOIN is enough to start.</td><td>4–6 weeks</td><td>Basic–Intermediate</td></tr>
       <tr><td><strong>Power BI or Tableau</strong></td><td>Dashboard tools. You will be asked to build reports for managers. Pick one — Power BI if targeting Indian companies, Tableau for MNCs.</td><td>3–5 weeks</td><td>Basic</td></tr>
-      <tr><td><strong>Data storytelling</strong></td><td>Can you explain what the numbers mean to a non-analyst? This separates good analysts from people who just run queries. BBA advantage here.</td><td>Ongoing practice</td><td>Core strength</td></tr>
+      <tr><td><strong>Data storytelling</strong></td><td>Can you explain what the numbers mean to a non-analyst? This separates good analysts from people who just run queries. <span class="hl-green">BBA advantage here.</span></td><td>Ongoing practice</td><td>Core strength</td></tr>
       <tr><td><strong>SCM fundamentals (if SCM path)</strong></td><td>Understand what demand planning, inventory turnover, lead time, and procurement cycles mean. Without this context, your data work has no meaning.</td><td>2–3 weeks</td><td>Conceptual clarity</td></tr>
-      <tr><td><strong>Communication & email</strong></td><td>Analysts constantly present findings to non-technical managers. Writing clearly, speaking confidently about data — this is what gets you promoted.</td><td>Ongoing</td><td>Strong</td></tr>
-      <tr class="total"><td colspan="3">Total focused learning time before applying</td><td>4–5 months</td></tr>
+      <tr><td><strong>Communication & email</strong></td><td>Analysts constantly present findings to non-technical managers. Writing clearly, speaking confidently about data — <span class="hl-green">this is what gets you promoted.</span></td><td>Ongoing</td><td>Strong</td></tr>
+      <tr class="total"><td colspan="3">Total focused learning time before applying</td><td><span class="hl">4–5 months</span></td></tr>
     </tbody>
   </table></div>
 </section>
@@ -186,7 +208,7 @@
       <div class="stat-row"><span class="k">Must learn</span><span class="v">Pivot Tables, VLOOKUP, IF, charts</span></div>
       <div class="stat-row"><span class="k">Learn from</span><span class="v">ExcelJet.net (free), Chandoo.org</span></div>
       <div class="stat-row"><span class="k">Practice</span><span class="v">Download real sales datasets from Kaggle</span></div>
-      <div class="stat-row"><span class="k">Cost</span><span class="v">Free (use Google Sheets if no Excel)</span></div>
+      <div class="stat-row"><span class="k">Cost</span><span class="v"><span class="hl-green">Free</span> (use Google Sheets if no Excel)</span></div>
     </div>
     <div class="country-card" style="border-top: 3px solid #2E7D32;">
       <div class="flag">Month 2 — Data Querying</div>
@@ -195,7 +217,7 @@
       <div class="stat-row"><span class="k">Must learn</span><span class="v">SELECT, WHERE, GROUP BY, JOIN, HAVING</span></div>
       <div class="stat-row"><span class="k">Learn from</span><span class="v">SQLZoo.net, Mode Analytics (free)</span></div>
       <div class="stat-row"><span class="k">Practice</span><span class="v">SQLiteOnline.com with sample datasets</span></div>
-      <div class="stat-row"><span class="k">Cost</span><span class="v">Free — no software needed</span></div>
+      <div class="stat-row"><span class="k">Cost</span><span class="v"><span class="hl-green">Free</span> — no software needed</span></div>
     </div>
     <div class="country-card" style="border-top: 3px solid #7B5EA7;">
       <div class="flag">Month 3 — Dashboards</div>
@@ -204,7 +226,7 @@
       <div class="stat-row"><span class="k">Must learn</span><span class="v">Connect data, build charts, add filters/slicers</span></div>
       <div class="stat-row"><span class="k">Learn from</span><span class="v">Microsoft Learn (free), Guy in a Cube (YouTube)</span></div>
       <div class="stat-row"><span class="k">Practice</span><span class="v">Build 3 dashboards from Kaggle data</span></div>
-      <div class="stat-row"><span class="k">Cost</span><span class="v">Free (Power BI Desktop)</span></div>
+      <div class="stat-row"><span class="k">Cost</span><span class="v"><span class="hl-green">Free</span> (Power BI Desktop)</span></div>
     </div>
     <div class="country-card" style="border-top: 3px solid #E07B3D;">
       <div class="flag">Month 4 — AI Tools</div>
@@ -212,7 +234,7 @@
       <div class="tag">Use AI to write SQL faster, explain data to managers, clean messy datasets, and draft reports in minutes.</div>
       <div class="stat-row"><span class="k">Use for</span><span class="v">SQL generation, formula help, email drafts</span></div>
       <div class="stat-row"><span class="k">Must know</span><span class="v">How to prompt well, how to verify output</span></div>
-      <div class="stat-row"><span class="k">Cost</span><span class="v">Free (GPT-4o) / ₹1,650/mo for Plus</span></div>
+      <div class="stat-row"><span class="k">Cost</span><span class="v"><span class="hl-green">Free</span> (GPT-4o) / ₹1,650/mo for Plus</span></div>
       <div class="stat-row"><span class="k">Risk</span><span class="v">AI makes mistakes — always double-check</span></div>
     </div>
     <div class="country-card" style="border-top: 3px solid #C7457A;">
@@ -231,14 +253,14 @@
       <div class="stat-row"><span class="k">LinkedIn</span><span class="v">Active profile with projects, certifications</span></div>
       <div class="stat-row"><span class="k">Notion / Docs</span><span class="v">Document your projects and learnings</span></div>
       <div class="stat-row"><span class="k">Kaggle</span><span class="v">Practice datasets + public portfolio</span></div>
-      <div class="stat-row"><span class="k">Cost</span><span class="v">Free</span></div>
+      <div class="stat-row"><span class="k">Cost</span><span class="v"><span class="hl-green">Free</span></span></div>
     </div>
   </div>
 </section>
 
 <section>
   <h2><span class="num">04</span>How to actually use AI — the right way</h2>
-  <p class="lead">AI doesn't replace you — it makes you 3x faster. But only if you know enough to guide it and verify what it gives you back.</p>
+  <p class="lead">AI doesn't replace you — it makes you <span class="hl">3x faster</span>. But only if you know enough to guide it and verify what it gives you back.</p>
 
   <div class="cost-card"><table>
     <thead><tr><th>Task</th><th>How to use AI for it</th><th>What to watch out for</th></tr></thead>
@@ -258,7 +280,7 @@
     <ul>
       <li><strong>Use AI to draft, not to decide.</strong> AI gives you a starting point. You verify, adapt, and own the final output.</li>
       <li><strong>Learn the skill first, then use AI to speed it up.</strong> If you can't write a basic SQL query yourself, you won't catch when ChatGPT's SQL is wrong — and it often is.</li>
-      <li><strong>Never paste confidential company data into ChatGPT.</strong> Use anonymised samples or synthetic data for work tasks.</li>
+      <li><strong><span class="hl">Never paste confidential company data into ChatGPT.</span></strong> Use anonymised samples or synthetic data for work tasks.</li>
       <li><strong>The best prompt is a specific one.</strong> "Help me with SQL" gets a generic answer. "Write a SQL query to find top 5 SKUs by returns in the last 30 days, grouped by warehouse" gets something useful.</li>
     </ul>
   </div>
@@ -266,7 +288,7 @@
 
 <section>
   <h2><span class="num">05</span>SCM-specific skills — if that's your path</h2>
-  <p class="lead">Supply chain has its own vocabulary and metrics. You don't need a logistics degree — but you do need to speak the language fluently in interviews.</p>
+  <p class="lead">Supply chain has its own vocabulary and metrics. You don't need a logistics degree — but you do need to <span class="hl">speak the language fluently in interviews</span>.</p>
   <div class="country-grid">
     <div class="country-card" style="border-top: 3px solid #2E7D32;">
       <div class="flag">Must Understand</div>
@@ -293,10 +315,10 @@
       <h3>What to Add to Resume</h3>
       <div class="tag">Not mandatory, but they show intent and fill gaps in a non-SCM degree background.</div>
       <div class="stat-row"><span class="k">APICS CSCP</span><span class="v">Gold standard — expensive but respected</span></div>
-      <div class="stat-row"><span class="k">Google Data Analytics</span><span class="v">Free on Coursera (with aid) — good for data path</span></div>
+      <div class="stat-row"><span class="k">Google Data Analytics</span><span class="v"><span class="hl-green">Free on Coursera</span> (with aid) — good for data path</span></div>
       <div class="stat-row"><span class="k">Microsoft PL-300</span><span class="v">Power BI certification — valued in India</span></div>
       <div class="stat-row"><span class="k">Coursera SCM</span><span class="v">Rutgers / MIT supply chain courses</span></div>
-      <div class="stat-row"><span class="k">Reality</span><span class="v">Projects matter more than certs to most hirers</span></div>
+      <div class="stat-row"><span class="k">Reality</span><span class="v"><span class="hl">Projects &gt; certs</span> to most hirers</span></div>
     </div>
     <div class="country-card" style="border-top: 3px solid #4A8BA4;">
       <div class="flag">Where the Jobs Are</div>
@@ -313,7 +335,7 @@
 
 <section>
   <h2><span class="num">06</span>Your 6-month roadmap</h2>
-  <p>Don't try to learn everything before starting. This sequence gets you applying within 5–6 months — not 2 years.</p>
+  <p>Don't try to learn everything before starting. This sequence gets you applying within <span class="hl">5–6 months</span> — not 2 years.</p>
   <div class="timeline">
     <div class="timeline-item">
       <div class="when">Month 1</div>
@@ -341,7 +363,7 @@
         <ul>
           <li>Download Power BI Desktop (free) and connect it to a CSV dataset</li>
           <li>Build a 3-page dashboard: overview, product breakdown, and trends</li>
-          <li>Publish to Power BI Service, add the live link to your LinkedIn — portfolio piece #1</li>
+          <li>Publish to Power BI Service, add the live link to your LinkedIn — <span class="hl-green">portfolio piece #1</span></li>
         </ul>
       </div>
     </div>
@@ -350,7 +372,7 @@
       <div class="what"><strong>AI workflow + start applying.</strong>
         <ul>
           <li>Use ChatGPT daily for formula help, SQL practice, and mock interview prep</li>
-          <li>Start applying for internships — minimum 10 tailored applications per week</li>
+          <li>Start applying for internships — <span class="hl">minimum 10 applications per week</span></li>
           <li>Target e-commerce and FMCG companies first; they hire the most freshers</li>
         </ul>
       </div>
@@ -371,7 +393,7 @@
         <ul>
           <li>Practise top 10 data analyst and SCM interview questions out loud — not just reading</li>
           <li>Apply daily on LinkedIn, Naukri, Unstop, and company career pages</li>
-          <li>Don't wait to feel ready — readiness comes from real interviews, not more studying</li>
+          <li><span class="hl">Don't wait to feel ready</span> — readiness comes from real interviews, not more studying</li>
         </ul>
       </div>
     </div>
@@ -401,8 +423,8 @@
       <li><strong>"AI will replace analysts"</strong> — AI replaces repetitive data pulling. It doesn't replace business judgment, stakeholder communication, or problem framing — all of which a BBA student is trained for.</li>
     </ul></div>
     <div class="pc-box pros"><h4>What actually works</h4><ul>
-      <li><strong>Learn Excel properly first</strong> — It's unsexy but it's the job. 80% of analyst tasks in Indian companies happen in Excel.</li>
-      <li><strong>Build real projects on public data</strong> — Pick a business problem, solve it with data, publish it. One good project outweighs three certifications.</li>
+      <li><strong>Learn Excel properly first</strong> — It's unsexy but it's the job. <span class="hl-green">80% of analyst tasks</span> in Indian companies happen in Excel.</li>
+      <li><strong>Build real projects on public data</strong> — <span class="hl-green">One good project outweighs three certifications.</span> Pick a business problem, solve it, publish it.</li>
       <li><strong>Use your BBA advantage</strong> — You understand P&L, marketing, finance, and business context. Tech people often don't. That's your edge — lead with it.</li>
       <li><strong>Apply before you feel ready</strong> — The job market gives you feedback no course can. Rejection is data. Interviews teach you what to improve.</li>
       <li><strong>LinkedIn is your biggest multiplier</strong> — A complete, active LinkedIn profile with your projects visible gets you inbound messages. Most candidates skip this.</li>
@@ -413,7 +435,7 @@
 
 <section>
   <h2><span class="num">08</span>How to land your first role</h2>
-  <p class="lead">Getting the job is a separate skill from doing the job. Most people under-invest in the application and interview process.</p>
+  <p class="lead">Getting the job is a separate skill from doing the job. <span class="hl">Most people under-invest in the application and interview process.</span></p>
   <div class="cost-card"><table>
     <thead><tr><th>What</th><th>How to do it right</th></tr></thead>
     <tbody>
@@ -435,7 +457,7 @@
         <ul style="padding-left:16px; margin:0;">
           <li>LinkedIn Easy Apply, Naukri.com, Unstop (campus), company career pages</li>
           <li>For SCM: also check Logistics Insider and supply chain LinkedIn groups</li>
-          <li>Apply on Day 1 of posting — response rates drop significantly after 48 hours</li>
+          <li><span class="hl">Apply on Day 1</span> of posting — response rates drop significantly after 48 hours</li>
         </ul>
       </td></tr>
       <tr><td><strong>Interview prep</strong></td><td>
@@ -449,13 +471,13 @@
         <ul style="padding-left:16px; margin:0;">
           <li>Message analysts at target companies on LinkedIn</li>
           <li>"I'm a BBA student building data skills — can I get 15 minutes of your time?"</li>
-          <li>1 in 5 will say yes; those conversations are worth more than any course</li>
+          <li><span class="hl-green">1 in 5 will say yes</span> — those conversations are worth more than any course</li>
         </ul>
       </td></tr>
       <tr><td><strong>Internship first</strong></td><td>
         <ul style="padding-left:16px; margin:0;">
           <li>If full-time isn't converting, take a 3-month internship — even low-paid</li>
-          <li>Real work experience moves you to a different resume tier entirely</li>
+          <li><span class="hl">Real work experience moves you to a different resume tier</span> entirely</li>
           <li>Find them on Internshala, LinkedIn, and direct company career pages</li>
         </ul>
       </td></tr>
@@ -466,7 +488,7 @@
 <section class="footer-note">
   <strong>About this guide:</strong> Written for non-technical BBA/commerce students in India looking to build a career in Data Analysis or Supply Chain Management in 2026. All tools mentioned have free versions available. Salary ranges are based on fresher market data in Indian metro cities and will vary by company size, location, and negotiation.
   <br><br>
-  <strong>One honest truth:</strong> This is a 4–6 month focused effort, not a 2-week sprint. The students who get hired are the ones who:
+  <strong>One honest truth:</strong> This is a <span class="hl">4–6 month focused effort</span>, not a 2-week sprint. The students who get hired are the ones who:
   <ul>
     <li>Learn consistently — even 1 hour a day compounds fast</li>
     <li>Build real projects on public data — not just watch courses</li>
